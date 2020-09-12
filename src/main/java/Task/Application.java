@@ -27,6 +27,13 @@ public class Application {
 		});
 
 		studentDao.delete(1);
+		
+		Student stud1 = studentDao.read_id(3);
+		System.out.println(stud1);
+		System.out.println();
+
+		stud1.setAge(stud1.getAge() + 1);
+		studentDao.update(stud1);
 
 		studentDao.readAll().forEach(System.out::println);
 	}
